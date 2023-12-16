@@ -1,5 +1,5 @@
-name: Aprendiendo GitHub Actions
-run-name: ¡Estoy aprendiendo GitHub Actions!
+name: Aprendiendo Github Acions
+run-name: ¡Estoy aprendiendo Github-Actions!
 on: [push]
 jobs:
   hola-mundo:
@@ -7,7 +7,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Definir variable
-        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
-      - name: Correr script
-        run: console.js
+      - name: echo
+        run: echo "hello world"      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: node console.js
